@@ -1,10 +1,15 @@
 package br.com.joaofzm15.piccolo.ui.uiEntities;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.plaf.ComponentUI;
+
+import br.com.joaofzm15.piccolo.ui.frames.GameFrame;
 
 public class Frame {
 	
@@ -35,4 +40,5 @@ public class Frame {
 	public void dispose() {
 		frame.dispose();
 	}
+
 }
