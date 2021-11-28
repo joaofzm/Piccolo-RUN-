@@ -4,12 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 import br.com.joaofzm15.piccolo.ui.uiEntities.Blast;
-import br.com.joaofzm15.piccolo.ui.uiEntities.Button;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Explosion;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Frame;
-import br.com.joaofzm15.piccolo.ui.uiEntities.Label;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Piccolo;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Score;
 
@@ -37,8 +36,12 @@ public class GameFrame implements ActionListener, KeyListener {
 	}
 
 	private Explosion explosion;
+	
+	private ArrayList<Blast> listOfBlasts;
 
 	public GameFrame() {
+		
+		listOfBlasts = new ArrayList<Blast>();
 		
 		playerAlive=true;
 
@@ -61,10 +64,19 @@ public class GameFrame implements ActionListener, KeyListener {
 		frame.makeFrameVisible();
 
 	}
+	
+	public void restart() {
+		int xPos = 1600;
+		for (Blast blast : listOfBlasts) {
+			blast.getLabel().getJComponent().setBounds(xPos,600, 150, 150);
+			xPos+=600;
+		}
+	}
 
 	public void newBlast(int x) {
 		Blast blast = new Blast(x, 600, 150, 150, "blast.gif", this);
 		frame.add(blast.getLabel());
+		listOfBlasts.add(blast);
 
 	}
 
@@ -92,6 +104,12 @@ public class GameFrame implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_SPACE && playerAlive) {
+			piccolo.jump();
+		}
+		if (e.getKeyCode()==82 && !playerAlive) {
+			restart();
+			playerAlive=true;
+			score.resetScore();
 			piccolo.jump();
 		}
 	}

@@ -16,6 +16,10 @@ public class Score {
 
 	}
 	
+	public void resetScore() {
+		currentScore=0;
+		label.getJComponent().setText("Score: "+currentScore);
+	}
 	public void increaseScore() {
 		currentScore++;
 		label.getJComponent().setText("Score: "+currentScore);

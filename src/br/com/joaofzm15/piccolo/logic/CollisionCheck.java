@@ -12,7 +12,7 @@ public class CollisionCheck {
 			gf.setPlayerAlive(false);
 			gf.explodePlusDie();
 		}
-    	if (blast.getLabel().getJComponent().getX()==140&&gf.isPlayerAlive()) {
+    	if (blast.getLabel().getJComponent().getX()==68&&gf.isPlayerAlive()) {
     		gf.getScore().increaseScore();
     	}
 	}
