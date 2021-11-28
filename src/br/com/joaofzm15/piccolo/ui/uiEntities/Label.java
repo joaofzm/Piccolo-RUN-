@@ -20,6 +20,12 @@ public class Label implements Component  {
 		label.setBorder(border);
 	}
 	
+	public Label(int x, int y, int xSize, int ySize) {
+		label = new JLabel();
+		Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
+		label.setBounds(x,y,xSize,ySize);
+		label.setBorder(border);
+	}
 	
 	public JLabel getJComponent() {
 		return label;
