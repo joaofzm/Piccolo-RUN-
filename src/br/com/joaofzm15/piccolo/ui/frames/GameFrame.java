@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import br.com.joaofzm15.piccolo.ui.uiEntities.Blast;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Button;
+import br.com.joaofzm15.piccolo.ui.uiEntities.ClickSound;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Explosion;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Frame;
 import br.com.joaofzm15.piccolo.ui.uiEntities.GameOverWarning;
@@ -171,6 +172,8 @@ public class GameFrame implements ActionListener, KeyListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		new Thread(new ClickSound()).start();
+
 		if (e.getSource() == mainMenu.getJComponent()) {
 			frame.dispose();
 			new MenuFrame();

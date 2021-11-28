@@ -31,7 +31,9 @@ public class Piccolo {
 	}
 	
 	public void jump() {
+
 		if (!jumping) {
+			new Thread(new JumpSound()).start();
 			jumping=true;
 			label.getJComponent().setBounds(150,394,208,339);
 			label.getJComponent().setIcon(jumpingIcon);
