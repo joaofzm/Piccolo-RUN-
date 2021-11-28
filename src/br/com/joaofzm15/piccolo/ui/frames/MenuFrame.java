@@ -5,18 +5,25 @@ import java.awt.event.ActionListener;
 
 import br.com.joaofzm15.piccolo.ui.uiEntities.Button;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Frame;
+import br.com.joaofzm15.piccolo.ui.uiEntities.Label;
 
 public class MenuFrame implements ActionListener {
 
 	private Frame frame;
+	
 	private Button startButton;
 	private Button scoresButton;
 	private Button optionsButton;
 	private Button exitButton;
+	
+	private Label logo;
 
 	public MenuFrame() {
 
 		frame = new Frame("menuBackground.gif");
+		
+		logo=new Label(700, 35, 465, 181, "logo.png");
+		frame.add(logo);
 
 		startButton = new Button(780, 280, 300, 100, "P L A Y", 0, 153, 0, 66);
 		startButton.getJComponent().addActionListener(this);
@@ -32,6 +39,7 @@ public class MenuFrame implements ActionListener {
 		exitButton.getJComponent().addActionListener(this);
 		frame.add(exitButton);
 
+		
 		frame.makeFrameVisible();
 
 	}

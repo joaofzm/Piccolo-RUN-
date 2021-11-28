@@ -17,7 +17,6 @@ public class Button implements Component {
 	public Button(int x, int y, int xSize, int ySize, String text, int red, int green, int blue, int fontSize) {
 		button = new JButton();
 		button.setBounds(x, y, xSize , ySize);
-//		button.addActionListener(this);
 		button.setText(text);
 		button.setFont(new Font("Impact",Font.BOLD, fontSize));
 		button.setForeground(Color.white);
