@@ -14,6 +14,9 @@ import br.com.joaofzm15.piccolo.ui.frames.GameFrame;
 public class Frame {
 	
 	private JFrame frame;
+	public JFrame getJFrame() {
+		return frame;
+	}
 	
 	public Frame(String backgroundURL) {
 		frame = new JFrame();
@@ -28,7 +31,7 @@ public class Frame {
 		frame.setLocationRelativeTo(null);
 	}
 
-	public void add(Component component) {
+	public void add(FrameComponent component) {
 		frame.add(component.getJComponent());
 	}
 	

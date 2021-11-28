@@ -13,6 +13,11 @@ public class Piccolo {
 	private ImageIcon jumpingIcon;
 	private ImageIcon runningIcon;
 	private ImageIcon deadIcon;
+	
+	private boolean jumping;
+	public boolean isJumping() {
+		return jumping;
+	}
 
 	public Piccolo(int x, int y, int xSize, int ySize, String imageURL) {
 		label = new Label(x,y,xSize,ySize,imageURL);
@@ -26,19 +31,22 @@ public class Piccolo {
 	}
 	
 	public void jump() {
-		label.getJComponent().setBounds(150,394,208,339);
-		label.getJComponent().setIcon(jumpingIcon);
-		new java.util.Timer().schedule( 
-		        new java.util.TimerTask() {
-		            @Override
-		            public void run() {
-		        		label.getJComponent().setBounds(150,597,173,129);
-		        		label.getJComponent().setIcon(runningIcon);
-		            }
-		        }, 
-		        1350 
-		);
-		
+		if (!jumping) {
+			jumping=true;
+			label.getJComponent().setBounds(150,394,208,339);
+			label.getJComponent().setIcon(jumpingIcon);
+			new java.util.Timer().schedule( 
+			        new java.util.TimerTask() {
+			            @Override
+			            public void run() {
+			        		label.getJComponent().setBounds(150,597,173,129);
+			        		label.getJComponent().setIcon(runningIcon);
+			    			jumping=false;
+			            }
+			        }, 
+			        1015 
+			);
+		}
 	}
 	
 	public void die() {

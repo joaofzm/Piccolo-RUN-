@@ -6,7 +6,7 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
-public class Button implements Component {
+public class Button implements FrameComponent {
 
 	JButton button;
 	

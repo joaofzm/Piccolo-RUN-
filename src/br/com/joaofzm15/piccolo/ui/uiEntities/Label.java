@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 
-public class Label implements Component  {
+public class Label implements FrameComponent  {
 
 	private JLabel label;
 	
@@ -17,14 +17,14 @@ public class Label implements Component  {
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(imageURL));
 		label.setIcon(icon);
 		label.setBounds(x,y,xSize,ySize);
-		label.setBorder(border);
+//		label.setBorder(border);
 	}
 	
 	public Label(int x, int y, int xSize, int ySize) {
 		label = new JLabel();
 		Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
 		label.setBounds(x,y,xSize,ySize);
-		label.setBorder(border);
+//		label.setBorder(border);
 	}
 	
 	public JLabel getJComponent() {
