@@ -13,7 +13,7 @@ public class MenuFrame implements ActionListener {
 
 	private Button startButton;
 	private Button scoresButton;
-	private Button optionsButton;
+	private Button creditsButton;
 	private Button exitButton;
 
 	private Label logo;
@@ -33,9 +33,9 @@ public class MenuFrame implements ActionListener {
 		scoresButton.getJComponent().addActionListener(this);
 		frame.add(scoresButton);
 
-		optionsButton = new Button(830, 530, 200, 50, "O P T I O N S", 0, 210, 210, 22);
-		optionsButton.getJComponent().addActionListener(this);
-		frame.add(optionsButton);
+		creditsButton = new Button(830, 530, 200, 50, "C R E D I T S", 0, 210, 210, 22);
+		creditsButton.getJComponent().addActionListener(this);
+		frame.add(creditsButton);
 
 		exitButton = new Button(855, 630, 150, 50, "E X I T", 204, 0, 0, 22);
 		exitButton.getJComponent().addActionListener(this);
@@ -50,6 +50,10 @@ public class MenuFrame implements ActionListener {
 		if (e.getSource() == startButton.getJComponent()) {
 			frame.dispose();
 			new GameFrame();
+		}
+		if (e.getSource() == creditsButton.getJComponent()) {
+			frame.dispose();
+			new CreditsFrame();
 		}
 		if (e.getSource() == exitButton.getJComponent()) {
 			try {

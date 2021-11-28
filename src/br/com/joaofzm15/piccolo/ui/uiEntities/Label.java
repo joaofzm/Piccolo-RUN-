@@ -31,11 +31,7 @@ public class Label implements FrameComponent  {
 		return label;
 	}
 	
-	public void setVisible() {
-		label.setVisible(true);
-	}
-	
-	public void setInvisible() {
-		label.setVisible(false);
+	public void setVisible(boolean value) {
+		getJComponent().setVisible(value);
 	}
 }

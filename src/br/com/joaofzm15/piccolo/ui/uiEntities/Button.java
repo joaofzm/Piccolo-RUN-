@@ -24,4 +24,8 @@ public class Button implements FrameComponent {
 		button.setBorder(BorderFactory.createLineBorder(Color.white));
 		button.setFocusable(false);
 	}
+	
+	public void setVisible(boolean value) {
+		getJComponent().setVisible(value);
+	}
 }
