@@ -7,12 +7,15 @@ public class Score {
 	
 	private Label label;
 	private int currentScore = 0;
+	public int getScore() {
+		return currentScore;
+	}
 
 	public Score(int x, int y, int xSize, int ySize) {
 		label = new Label(x,y,xSize,ySize );
 		label.getJComponent().setText("Score: "+currentScore);
 		label.getJComponent().setFont(new Font("Impact",Font.BOLD, 60));
-		label.getJComponent().setForeground(Color.white);
+		label.getJComponent().setForeground(new Color(0,120,0));
 
 	}
 	
