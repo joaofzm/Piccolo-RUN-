@@ -15,6 +15,7 @@ public class Blast {
 	private ImageIcon blastIcon;
 	private GameFrame gameFrameThisBlastBelongsTo;
 	
+	
 	public Blast(int x, int y, int xSize, int ySize,String iconURL, GameFrame gameFrame) {
 		label = new Label(x,y,xSize,ySize, iconURL);
 		gameFrameThisBlastBelongsTo=gameFrame;

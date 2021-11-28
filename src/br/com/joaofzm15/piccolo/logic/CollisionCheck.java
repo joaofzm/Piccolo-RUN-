@@ -9,8 +9,12 @@ public class CollisionCheck {
 		if (blast.getLabel().getJComponent().getX() < 255 
 				&& blast.getLabel().getJComponent().getX() > 70
 				&& !gf.getPiccolo().isJumping()) {
+			gf.setPlayerAlive(false);
 			gf.explodePlusDie();
 		}
+    	if (blast.getLabel().getJComponent().getX()==140&&gf.isPlayerAlive()) {
+    		gf.getScore().increaseScore();
+    	}
 	}
 
 }

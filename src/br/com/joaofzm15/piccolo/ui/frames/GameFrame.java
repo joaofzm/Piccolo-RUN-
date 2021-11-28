@@ -18,6 +18,9 @@ public class GameFrame implements ActionListener, KeyListener {
 	private Frame frame;
 
 	private Score score;
+	public Score getScore() {
+		return score;
+	}
 
 	private Piccolo piccolo;
 
@@ -28,6 +31,9 @@ public class GameFrame implements ActionListener, KeyListener {
 	private boolean playerAlive;
 	public boolean isPlayerAlive() {
 		return playerAlive;
+	}
+	public void setPlayerAlive(boolean value) {
+		playerAlive=value;
 	}
 
 	private Explosion explosion;
@@ -64,7 +70,6 @@ public class GameFrame implements ActionListener, KeyListener {
 
 	public void explodePlusDie() {
 		explosion.explode();
-		playerAlive=false;
 		new java.util.Timer().schedule(new java.util.TimerTask() {
 			@Override
 			public void run() {
@@ -88,7 +93,6 @@ public class GameFrame implements ActionListener, KeyListener {
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_SPACE && playerAlive) {
 			piccolo.jump();
-			score.increaseScore();
 		}
 	}
 
