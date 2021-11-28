@@ -3,10 +3,10 @@ package br.com.joaofzm15.piccolo.ui.frames;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import br.com.joaofzm15.piccolo.ui.uiEntities.Blast;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Button;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Explosion;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Frame;
-import br.com.joaofzm15.piccolo.ui.uiEntities.Label;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Piccolo;
 
 
@@ -19,6 +19,8 @@ public class GameFrame implements ActionListener {
 	private Frame frame;
 	
 	private Piccolo piccolo;
+	
+	private Blast blast;
 	
 	private Explosion explosion;
 
@@ -44,7 +46,10 @@ public class GameFrame implements ActionListener {
 
 		piccolo=new Piccolo(150, 597, 173, 129, "characterRunning.gif");
 		frame.add(piccolo.getLabel());
-
+		
+		blast = new Blast(450, 530, 250, 250, "blast.gif");
+		frame.add(blast.getLabel());
+		
 		frame.makeFrameVisible();
 		
 	}
