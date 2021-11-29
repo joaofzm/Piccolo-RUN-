@@ -21,7 +21,12 @@ public class MenuFrame implements ActionListener {
 
 	public MenuFrame() {
 
-		frame = new Frame("menuBackground.png");
+		if (OptionsFrame.alternativeMenuArt) {
+		frame = new Frame("darkmenuBackground.png");
+		} else {
+			frame = new Frame("menuBackground.png");
+		}
+			
 
 		logo = new Label(700, 35, 465, 181, "logo.png");
 		frame.add(logo);
