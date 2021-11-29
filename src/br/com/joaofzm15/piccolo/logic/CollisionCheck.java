@@ -2,24 +2,38 @@ package br.com.joaofzm15.piccolo.logic;
 
 import br.com.joaofzm15.piccolo.ui.frames.GameFrame;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Blast;
+import br.com.joaofzm15.piccolo.ui.uiEntities.ExplosionSound;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Highscore;
+import br.com.joaofzm15.piccolo.ui.uiEntities.ScreamSound;
 
 public class CollisionCheck {
 
-	public static void checkCollision(GameFrame gf, Blast blast) {
+	public static boolean checkCollision(GameFrame gf, Blast blast) {
 		if (blast.getLabel().getJComponent().getX() < 255 
 				&& blast.getLabel().getJComponent().getX() > 70
 				&& !gf.getPiccolo().isJumping()) {
-			gf.setPlayerAlive(false);
-			gf.explodePlusDie();
-			gf.pauseGameOver();;
-			if (gf.getScore().getScore() > Highscore.getHighscore()) {
-				gf.gethighscore().setHighscore(gf.getScore().getScore());
+			if (gf.isPlayerAlive()) {
+				new Thread(new ScreamSound()).start();
+				new Thread(new ExplosionSound()).start();
+				gf.setPlayerAlive(false);
+				gf.explodePlusDie();
+				gf.pauseGameOver();
+				if (gf.getScore().getScore() > Highscore.getHighscore()) {
+					gf.gethighscore().setHighscore(gf.getScore().getScore());
+				}
+				return true;
 			}
 		}
     	if (blast.getLabel().getJComponent().getX()==68&&gf.isPlayerAlive()) {
     		gf.getScore().increaseScore();
+    		return false;
     	}
+    	if (blast.getLabel().getJComponent().getX()==140&&!gf.isPlayerAlive()) {
+			gf.explodePlusDie();
+			new Thread(new ExplosionSound()).start();
+			return true;
+    	}
+		return false;
 	}
 
 }

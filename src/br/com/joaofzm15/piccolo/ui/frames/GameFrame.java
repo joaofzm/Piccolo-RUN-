@@ -17,6 +17,7 @@ import br.com.joaofzm15.piccolo.ui.uiEntities.InstructionsLabel;
 import br.com.joaofzm15.piccolo.ui.uiEntities.PauseWarning;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Piccolo;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Score;
+import br.com.joaofzm15.piccolo.ui.uiEntities.ScreamSound;
 
 public class GameFrame implements ActionListener, KeyListener {
 
@@ -69,7 +70,7 @@ public class GameFrame implements ActionListener, KeyListener {
 		listOfBlasts = new ArrayList<Blast>();
 		playerAlive = false;
 
-		frame = new Frame("gameBackground.png");
+		frame = new Frame("gameBackground.gif");
 		frame.getJFrame().addKeyListener(this);
 
 		score = new Score(530, 100, 500, 200);
@@ -100,8 +101,8 @@ public class GameFrame implements ActionListener, KeyListener {
 		frame.add(explosion.getLabel());
 
 		newBlast(1400);
-		newBlast(2000);
-		newBlast(2600);
+		newBlast(2160);
+		newBlast(2920);
 
 		piccolo = new Piccolo(150, 597, 173, 129, "characterRunning.gif");
 		frame.add(piccolo.getLabel());

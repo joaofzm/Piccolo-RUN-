@@ -12,7 +12,6 @@ import br.com.joaofzm15.piccolo.ui.frames.GameFrame;
 public class Blast {
 	
 	private Label label;
-	private ImageIcon blastIcon;
 	private GameFrame gameFrameThisBlastBelongsTo;
 	private Timer timer;
 	
@@ -36,9 +35,12 @@ public class Blast {
 		TimerTask myTask = new TimerTask() {
 		    public void run() {
 		    	label.getJComponent().setBounds(label.getJComponent().getX()-4, 600, 150, 150);
-		    	CollisionCheck.checkCollision(gameFrameThisBlastBelongsTo, referenceToThisOwnClass);
+		    	boolean collided = CollisionCheck.checkCollision(gameFrameThisBlastBelongsTo, referenceToThisOwnClass);
 		    	if (label.getJComponent().getX()<=-300 && gameFrameThisBlastBelongsTo.isPlayerAlive()) {
 			    	label.getJComponent().setBounds(1400, 600, 150, 150);
+		    	}
+		    	if (collided) {
+			    	label.getJComponent().setBounds(-1000, 600, 150, 150);
 		    	}
 		    }
 		};
@@ -51,9 +53,12 @@ public class Blast {
 		TimerTask myTask = new TimerTask() {
 		    public void run() {
 		    	label.getJComponent().setBounds(label.getJComponent().getX()-4, 600, 150, 150);
-		    	CollisionCheck.checkCollision(gameFrameThisBlastBelongsTo, referenceToThisOwnClass);
+		    	boolean collided = CollisionCheck.checkCollision(gameFrameThisBlastBelongsTo, referenceToThisOwnClass);
 		    	if (label.getJComponent().getX()<=-300 && gameFrameThisBlastBelongsTo.isPlayerAlive()) {
 			    	label.getJComponent().setBounds(1400, 600, 150, 150);
+		    	}
+		    	if (collided) {
+			    	label.getJComponent().setBounds(-1000, 600, 150, 150);
 		    	}
 		    }
 		};

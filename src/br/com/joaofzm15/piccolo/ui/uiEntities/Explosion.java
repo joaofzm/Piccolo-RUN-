@@ -26,7 +26,7 @@ public class Explosion {
 		        		label.getJComponent().setIcon(null);
 		            }
 		        }, 
-		        1850 
+		        1350 
 		);
 		
 	}
