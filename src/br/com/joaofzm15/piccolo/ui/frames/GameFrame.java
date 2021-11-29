@@ -114,7 +114,7 @@ public class GameFrame implements ActionListener, KeyListener {
 	}
 
 	public void restart() {
-		int xPos = 1600;
+		int xPos = 1400;
 		for (Blast blast : listOfBlasts) {
 			blast.getLabel().getJComponent().setBounds(xPos, 600, 150, 150);
 			xPos += 600;

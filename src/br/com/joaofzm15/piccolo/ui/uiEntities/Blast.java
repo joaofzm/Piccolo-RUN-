@@ -52,7 +52,7 @@ public class Blast {
 		timer = new Timer();
 		TimerTask myTask = new TimerTask() {
 		    public void run() {
-		    	label.getJComponent().setBounds(label.getJComponent().getX()-4, 600, 150, 150);
+		    	label.getJComponent().setBounds(label.getJComponent().getX()-12, 600, 150, 150);
 		    	boolean collided = CollisionCheck.checkCollision(gameFrameThisBlastBelongsTo, referenceToThisOwnClass);
 		    	if (label.getJComponent().getX()<=-300 && gameFrameThisBlastBelongsTo.isPlayerAlive()) {
 			    	label.getJComponent().setBounds(1400, 600, 150, 150);
@@ -62,6 +62,6 @@ public class Blast {
 		    	}
 		    }
 		};
-		timer.schedule(myTask, 0, 10);
+		timer.schedule(myTask, 0, 30);
 	}
 }

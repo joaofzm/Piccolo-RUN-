@@ -13,7 +13,7 @@ public class MenuFrame implements ActionListener {
 	private Frame frame;
 
 	private Button startButton;
-	private Button scoresButton;
+	private Button optionsButton;
 	private Button creditsButton;
 	private Button exitButton;
 
@@ -21,7 +21,7 @@ public class MenuFrame implements ActionListener {
 
 	public MenuFrame() {
 
-		frame = new Frame("menuBackground.gif");
+		frame = new Frame("menuBackground.png");
 
 		logo = new Label(700, 35, 465, 181, "logo.png");
 		frame.add(logo);
@@ -30,11 +30,11 @@ public class MenuFrame implements ActionListener {
 		startButton.getJComponent().addActionListener(this);
 		frame.add(startButton);
 
-		scoresButton = new Button(805, 430, 250, 50, "H I G H    S C O R E S", 102, 0, 204, 22);
-		scoresButton.getJComponent().addActionListener(this);
-		frame.add(scoresButton);
+		optionsButton = new Button(805, 430, 250, 50, "O P T I O N S", 102, 0, 204, 22);
+		optionsButton.getJComponent().addActionListener(this);
+		frame.add(optionsButton);
 
-		creditsButton = new Button(830, 530, 200, 50, "C R E D I T S", 0, 210, 210, 22);
+		creditsButton = new Button(830, 530, 200, 50, "C R E D I T S", 255, 70, 0, 22);
 		creditsButton.getJComponent().addActionListener(this);
 		frame.add(creditsButton);
 
@@ -54,6 +54,10 @@ public class MenuFrame implements ActionListener {
 		if (e.getSource() == startButton.getJComponent()) {
 			frame.dispose();
 			new GameFrame();
+		}
+		if (e.getSource() == optionsButton.getJComponent()) {
+			frame.dispose();
+			new OptionsFrame();
 		}
 		if (e.getSource() == creditsButton.getJComponent()) {
 			frame.dispose();

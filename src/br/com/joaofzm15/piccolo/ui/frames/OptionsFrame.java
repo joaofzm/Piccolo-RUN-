@@ -8,25 +8,20 @@ import br.com.joaofzm15.piccolo.ui.uiEntities.ClickSound;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Frame;
 import br.com.joaofzm15.piccolo.ui.uiEntities.Label;
 
-public class CreditsFrame implements ActionListener {
+public class OptionsFrame implements ActionListener {
 
 	private Frame frame;
 
 	private Button mainMenu;
 
-	private Label movingPiccolo;
-	
-	public CreditsFrame() {
+	public OptionsFrame() {
 
-		frame = new Frame("creditsBackground.png");
+		frame = new Frame("optionsBackground.png");
 		
-		mainMenu = new Button(940, 630, 150, 50, "MAIN MENU", 102, 0, 204, 22);
+		mainMenu = new Button(320, 630, 150, 50, "MAIN MENU", 102, 0, 204, 22);
 		mainMenu.getJComponent().addActionListener(this);
 		frame.add(mainMenu);
 		
-		movingPiccolo=new Label(820, 80, 480, 480,"characterFloating.gif");
-		frame.add(movingPiccolo);
-
 		frame.makeFrameVisible();
 
 	}

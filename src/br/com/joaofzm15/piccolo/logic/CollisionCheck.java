@@ -10,7 +10,7 @@ public class CollisionCheck {
 
 	public static boolean checkCollision(GameFrame gf, Blast blast) {
 		if (blast.getLabel().getJComponent().getX() < 255 
-				&& blast.getLabel().getJComponent().getX() > 70
+				&& blast.getLabel().getJComponent().getX() > 50
 				&& !gf.getPiccolo().isJumping()) {
 			if (gf.isPlayerAlive()) {
 				new Thread(new ScreamSound()).start();

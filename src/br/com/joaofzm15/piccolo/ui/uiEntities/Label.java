@@ -13,18 +13,14 @@ public class Label implements FrameComponent  {
 	
 	public Label(int x, int y, int xSize, int ySize, String imageURL) {
 		label = new JLabel();
-		Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource(imageURL));
 		label.setIcon(icon);
 		label.setBounds(x,y,xSize,ySize);
-//		label.setBorder(border);
 	}
 	
 	public Label(int x, int y, int xSize, int ySize) {
 		label = new JLabel();
-		Border border = BorderFactory.createLineBorder(Color.BLUE, 5);
 		label.setBounds(x,y,xSize,ySize);
-//		label.setBorder(border);
 	}
 	
 	public JLabel getJComponent() {
