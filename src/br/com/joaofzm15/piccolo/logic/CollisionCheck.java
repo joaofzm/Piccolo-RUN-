@@ -26,6 +26,8 @@ public class CollisionCheck {
 		}
     	if (blast.getLabel().getJComponent().getX()==68&&gf.isPlayerAlive()) {
     		gf.getScore().increaseScore();
+    		if (gf.getScore().getScore()%10==0) {
+    		}
     		return false;
     	}
     	if (blast.getLabel().getJComponent().getX()==140&&!gf.isPlayerAlive()) {

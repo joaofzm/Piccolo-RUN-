@@ -1,0 +1,24 @@
+Piccolo Runner 
+---------------------------
+
+Background Music:
+"The heroic speech" from Dragon Ball Z Kai
+
+------------------------------------------------------------------------------------
+
+clickSound.wav:
+Original: 506053__mellau__button-click-2
+License: Attribution Noncommercial License.
+Source: https://freesound.org/people/Mellau/sounds/506053/
+Acess: 2nd July 2021.
+
+------------------------------------------------------------------------------------
+
+Any other piece of art that's not on this file is either credited in-game, or came
+from a unknown source. If you own any art used in this game and want it credited or
+removed, please contact me and I'll remove it asap.
+
+------------------------------------------------------------------------------------
+
+Joaofzm
+29/11/2021

@@ -100,9 +100,10 @@ public class GameFrame implements ActionListener, KeyListener {
 		explosion = new Explosion(130, 485, 224, 254);
 		frame.add(explosion.getLabel());
 
-		newBlast(1400);
-		newBlast(2160);
-		newBlast(2920);
+		newBlast(-1000);
+		newBlast(-1000);
+		newBlast(-1000);
+		newBlast(-1000);
 
 		piccolo = new Piccolo(150, 597, 173, 129, "characterRunning.gif");
 		frame.add(piccolo.getLabel());

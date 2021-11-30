@@ -25,7 +25,7 @@ public class Frame {
 		frame.setLayout(null);
 		ImageIcon windowIcon = new ImageIcon(getClass().getClassLoader().getResource("windowIcon.jpg"));
 		frame.setIconImage(windowIcon.getImage());
-		frame.setTitle("Piccolo RUN!");
+		frame.setTitle("Piccolo Runner");
 		frame.setResizable(false);
 		frame.setSize(1280, 720);
 		frame.setLocationRelativeTo(null);
